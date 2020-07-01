@@ -18,6 +18,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     fetchMyAPI();
   }, []);
 
+  console.log(confirmed, recovered, deaths);
   const barChart = confirmed ? (
     <Bar
       data={{
@@ -64,7 +65,9 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     />
   ) : null;
 
-  return <div className={styles.container}>{lineChart}</div>;
+  return (
+    <div className={styles.container}>{country ? barChart : lineChart}</div>
+  );
 };
 
 export default Chart;
