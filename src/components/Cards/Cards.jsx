@@ -10,6 +10,8 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     return 'Loading...';
   }
 
+  console.log((recovered.value / confirmed.value) * 100);
+
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
@@ -35,7 +37,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
-            <Typography variant="body2">Active Covid-19 Cases</Typography>
+            <Typography variant="body2">
+              Recorded Number of Covid-19 Cases
+            </Typography>
           </CardContent>
         </Grid>
         <Grid
@@ -60,7 +64,12 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
-            <Typography variant="body2">Recovered from Covid-19</Typography>
+            <Typography variant="body2">
+              Percentage Recovered from Covid-19:
+            </Typography>
+            <Typography>
+              {parseInt((recovered.value / confirmed.value) * 100)}%
+            </Typography>
           </CardContent>
         </Grid>
         <Grid
@@ -85,7 +94,12 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
-            <Typography variant="body2">Deaths from Covid-19</Typography>
+            <Typography variant="body2">
+              Percentage of Deaths from Covid-19
+            </Typography>
+            <Typography variant="body2">
+              {parseInt((deaths.value / confirmed.value) * 100)} %
+            </Typography>
           </CardContent>
         </Grid>
       </Grid>
