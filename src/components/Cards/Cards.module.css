@@ -1,15 +1,12 @@
 .container {
   margin: 50px 0px;
-
 }
 
 .card {
   margin: 0px 2% !important;
-
 }
 
 .infected {
-
   text-align: center;
   border-bottom: 10px solid rgba(0, 0, 255, 0.5);
 }
@@ -22,9 +19,8 @@
   border-bottom: 10px solid rgba(255, 0, 0, 0.5);
 }
 
-
-@media (max-width: 770px){
-  .card{
+@media (max-width: 770px) {
+  .card {
     margin: 5% 0 !important;
   }
 }

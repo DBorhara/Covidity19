@@ -18,7 +18,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     fetchMyAPI();
   }, []);
 
-  console.log(confirmed, recovered, deaths);
+
   const barChart = confirmed ? (
     <Bar
       data={{

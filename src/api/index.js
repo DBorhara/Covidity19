@@ -21,7 +21,7 @@ export const fetchData = async (country) => {
       lastUpdate,
     };
   } catch (error) {
-    console.log('ERROR>>>>>>>>', error);
+    console.error(error);
   }
 };
 
@@ -35,7 +35,7 @@ export const fetchDailyData = async () => {
       date,
     }));
   } catch (error) {
-    console.log('ERROR>>>>>>>>', error);
+    console.error(error);
   }
 };
 
@@ -49,6 +49,6 @@ export const getCountryNames = async () => {
       return country.name;
     });
   } catch (error) {
-    console.log('ERROR>>>>>>>>', error);
+    console.error(error);
   }
 };
